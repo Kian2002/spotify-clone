@@ -18,7 +18,7 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
   return (
     <Link
       href={href}
-      className={`flex w-full text-neutral-400 font-medium py-1 items-center gap-x-4 cursor-pointer hover:text-white transition ${
+      className={`flex w-full text-neutral-400 font-medium p-3 items-center gap-x-4 cursor-pointer hover:text-white transition ${
         active && "text-white"
       }`}
     >

@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { HiHome } from "react-icons/hi";
 import { BiSearch } from "react-icons/bi";
 
-import { Box, SidebarItem } from "../components";
+import { Box, SidebarItem, Library } from "../components";
 
 interface SidebarProps {
   children: React.ReactNode;
@@ -40,7 +40,9 @@ const Sidebar: React.FC<SidebarProps> = ({ children }) => {
             <SidebarItem key={route.label} {...route} />
           ))}
         </Box>
-        <Box className="h-full">Library</Box>
+        <Box className="h-full">
+          <Library />
+        </Box>
       </div>
       <main>{children}</main>
     </div>

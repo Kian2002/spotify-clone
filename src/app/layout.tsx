@@ -1,9 +1,12 @@
 import "./globals.css";
-import { Figtree } from "next/font/google";
+import { Montserrat } from "next/font/google";
 
 import { Sidebar } from "../components";
+import SupabaseProvider from "../providers/SupabaseProvider";
 
-const font = Figtree({ subsets: ["latin"] });
+const font = Montserrat({
+  subsets: ["latin"],
+});
 
 export const metadata = {
   title: "Spotify Clone",
@@ -18,7 +21,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={font.className}>
-        <Sidebar>{children}</Sidebar>
+        <SupabaseProvider>
+          <Sidebar>{children}</Sidebar>
+        </SupabaseProvider>
       </body>
     </html>
   );

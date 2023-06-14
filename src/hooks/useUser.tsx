@@ -71,9 +71,7 @@ export const UserContextProvider = (props: Props) => {
     subscription,
   };
 
-  return (
-    <UserContext.Provider value={value}>{props.children}</UserContext.Provider>
-  );
+  return <UserContext.Provider value={value} {...props} />;
 };
 
 export const useUser = () => {

@@ -4,6 +4,7 @@ import { Montserrat } from "next/font/google";
 import { Sidebar } from "../components";
 import SupabaseProvider from "../providers/SupabaseProvider";
 import UserContextProvider from "../providers/UserProvider";
+import ModalProvider from "@/providers/ModalProvider";
 
 const font = Montserrat({
   subsets: ["latin"],
@@ -24,6 +25,7 @@ export default function RootLayout({
       <body className={font.className}>
         <SupabaseProvider>
           <UserContextProvider>
+            <ModalProvider />
             <Sidebar>{children}</Sidebar>
           </UserContextProvider>
         </SupabaseProvider>

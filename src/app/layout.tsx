@@ -3,7 +3,7 @@ import { Montserrat } from "next/font/google";
 
 import { Sidebar } from "../components";
 import SupabaseProvider from "../providers/SupabaseProvider";
-import { UserContextProvider } from "@/hooks/useUser";
+import UserContextProvider from "../providers/UserProvider";
 
 const font = Montserrat({
   subsets: ["latin"],

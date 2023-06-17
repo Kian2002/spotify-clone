@@ -5,6 +5,7 @@ import { Sidebar } from "../components";
 import SupabaseProvider from "../providers/SupabaseProvider";
 import UserContextProvider from "../providers/UserProvider";
 import ModalProvider from "@/providers/ModalProvider";
+import ToasterProvider from "@/providers/ToasterProvider";
 
 const font = Montserrat({
   subsets: ["latin"],
@@ -23,6 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={font.className}>
+        <ToasterProvider />
         <SupabaseProvider>
           <UserContextProvider>
             <ModalProvider />

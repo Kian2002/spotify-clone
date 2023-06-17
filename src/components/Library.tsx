@@ -1,8 +1,21 @@
-import React from "react";
+"use client";
+
 import { AiOutlinePlus } from "react-icons/ai";
 import { TbPlaylist } from "react-icons/tb";
 
+import { useUser } from "@/hooks/useUser";
+import { useAuthModal } from "@/hooks/useAuthModal";
+
 const Library = () => {
+  const { user } = useUser();
+  const authModal = useAuthModal();
+
+  const handleClick = () => {
+    if (!user) {
+      authModal.open();
+    }
+  };
+
   return (
     <div className="flex flex-col">
       <div className="flex justify-between items-center p-4">
@@ -13,6 +26,7 @@ const Library = () => {
         <AiOutlinePlus
           size={18}
           className="transition text-neutral-400 cursor-pointer hover:text-white"
+          onClick={handleClick}
         />
       </div>
 

@@ -9,6 +9,7 @@ import Modal from "./Modal";
 import AuthModal from "./AuthModal";
 import UploadModal from "./UploadModal";
 import Input from "./Input";
+import SongItem from "./SongItem";
 
 export {
   Sidebar,
@@ -22,4 +23,5 @@ export {
   AuthModal,
   UploadModal,
   Input,
+  SongItem,
 };

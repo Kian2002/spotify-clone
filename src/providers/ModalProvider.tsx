@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 
-import { Modal } from "@/components";
+import { AuthModal } from "@/components";
 
 const ModalProvider = () => {
   const [isMounted, setIsMounted] = useState(false);
@@ -15,14 +15,7 @@ const ModalProvider = () => {
 
   return (
     <>
-      <Modal
-        title="Modal Title"
-        description="Modal Description"
-        isOpen={true}
-        onChange={() => {}}
-      >
-        <p>Modal Content</p>
-      </Modal>
+      <AuthModal />
     </>
   );
 };

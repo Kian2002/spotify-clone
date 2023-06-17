@@ -5,15 +5,19 @@ import { TbPlaylist } from "react-icons/tb";
 
 import { useUser } from "@/hooks/useUser";
 import { useAuthModal } from "@/hooks/useAuthModal";
+import useUploadModal from "@/hooks/useUploadModal";
 
 const Library = () => {
   const { user } = useUser();
   const authModal = useAuthModal();
+  const uploadModal = useUploadModal();
 
   const handleClick = () => {
     if (!user) {
       authModal.open();
     }
+
+    return uploadModal.open();
   };
 
   return (

@@ -7,6 +7,7 @@ import { HiHome } from "react-icons/hi";
 import { BiSearch } from "react-icons/bi";
 
 import { Button } from "../components";
+import { useAuthModal } from "@/hooks/useAuthModal";
 
 interface HeaderProps {
   children: React.ReactNode;
@@ -15,6 +16,8 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ children, className }) => {
   const router = useRouter();
+
+  const authModal = useAuthModal();
 
   return (
     <div className="bg-gradient-to-b from-emerald-800 p-6 h-fit">
@@ -45,12 +48,17 @@ const Header: React.FC<HeaderProps> = ({ children, className }) => {
 
         <div className="flex justify-center items-center gap-x-4">
           <div>
-            <Button className="text-neutral-300 bg-transparent font-medium">
+            <Button
+              className="text-neutral-300 bg-transparent font-medium"
+              onClick={authModal.open}
+            >
               Sign up
             </Button>
           </div>
           <div>
-            <Button className="px-6 py-2 bg-white">Log in</Button>
+            <Button className="px-6 py-2 bg-white" onClick={authModal.open}>
+              Log in
+            </Button>
           </div>
         </div>
       </div>

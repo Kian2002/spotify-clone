@@ -6,7 +6,7 @@ import UserContextProvider from "../providers/UserProvider";
 import ModalProvider from "@/providers/ModalProvider";
 import ToasterProvider from "@/providers/ToasterProvider";
 import getSongsByUserId from "@/actions/getSongsByUserId";
-import { Sidebar } from "../components";
+import { Sidebar, Player } from "../components";
 
 const font = Montserrat({
   subsets: ["latin"],
@@ -34,6 +34,7 @@ export default async function RootLayout({
           <UserContextProvider>
             <ModalProvider />
             <Sidebar songs={userSongs}>{children}</Sidebar>
+            <Player />
           </UserContextProvider>
         </SupabaseProvider>
       </body>

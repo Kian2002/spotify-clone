@@ -11,6 +11,7 @@ import UploadModal from "./UploadModal";
 import Input from "./Input";
 import SongItem from "./SongItem";
 import PlayButton from "./PlayButton";
+import MediaItem from "./MediaItem";
 
 export {
   Sidebar,
@@ -26,4 +27,5 @@ export {
   Input,
   SongItem,
   PlayButton,
+  MediaItem,
 };

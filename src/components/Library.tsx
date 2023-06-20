@@ -21,7 +21,7 @@ const Library: React.FC<LibraryProps> = ({ songs }) => {
 
   const handleClick = () => {
     if (!user) {
-      authModal.open();
+      return authModal.open();
     }
 
     return uploadModal.open();

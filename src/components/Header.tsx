@@ -12,6 +12,7 @@ import { toast } from "react-hot-toast";
 import { Button } from "../components";
 import { useAuthModal } from "@/hooks/useAuthModal";
 import { useUser } from "@/hooks/useUser";
+import usePlayer from "@/hooks/usePlayer";
 
 interface HeaderProps {
   children: React.ReactNode;
@@ -22,6 +23,7 @@ const Header: React.FC<HeaderProps> = ({ children, className }) => {
   const router = useRouter();
   const authModal = useAuthModal();
   const { user } = useUser();
+  const player = usePlayer();
 
   const supabaseClient = useSupabaseClient();
 
@@ -35,6 +37,7 @@ const Header: React.FC<HeaderProps> = ({ children, className }) => {
     }
 
     router.refresh();
+    player.reset();
   };
 
   return (
